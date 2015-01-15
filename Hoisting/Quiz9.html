@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Quiz</title>
+</head>
+<body>
+  <script>
+   var foo = 1;
+   function bar() {
+     if (!foo) {
+       var foo = 10;
+     }
+     console.log(foo); //10
+   }
+   bar();
+
+   /*
+   The code will be rewritten to below.  When foo gets redeclared in function bar(), it will be a local copy.
+   When we check if !foo, since foo is undefined, it will fall into the if clause and be set to 10.
+    function bar(){
+      var foo;
+      if(!foo){
+        foo = 10;
+      }
+      console.log(foo);
+
+    }
+    var foo;
+    foo = 1;
+
+
+   */
+  </script>
+</body>
+</html>

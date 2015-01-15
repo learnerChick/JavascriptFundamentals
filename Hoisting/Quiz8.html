@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Quiz</title>
+</head>
+<body>
+  <script>
+    function a() {
+      console.log(this);  //window
+    }
+    a.call(null);
+
+    /*
+    The specs say if the thisArg being passed for call or apply is null/undefined, then the global object will
+    be passed in.
+    */
+  </script>
+</body>
+</html>

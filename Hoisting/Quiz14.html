@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Quiz</title>
+</head>
+<body>
+  <script>
+    function foo(){
+      return bar();
+      var bar = function() {
+          return 3;
+      };
+      var bar = function() {
+          return 8;
+      };
+    }
+    console.log(foo()); //Type Error. undefined is not a function
+
+    /*
+    Will be rewritten to
+    function foo(){
+      var bar;
+      return bar();
+      bar = function(){
+        return 3;
+      }
+
+      bar = function(){
+        return 8;
+      }
+    }
+
+    */
+  </script>
+</body>
+</html>

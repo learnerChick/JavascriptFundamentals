@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Quiz</title>
+</head>
+<body>
+  <script>
+    function b(x, y, a) {
+      arguments[2] = 10;
+      console.log(a); //10
+    }
+    b(1, 2, 3);
+
+    /*
+    the arguments object and a share the same object.  The JS engine keeps them in sync.
+    */
+  </script>
+</body>
+</html>

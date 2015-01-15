@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Quiz</title>
+</head>
+<body>
+  <script>
+    function foo(a) {
+     a();
+     function a() {
+      console.log("yay");
+    }
+  }
+
+
+foo(); //yay -because function declaration gets hoisted.
+foo( undefined ); //yay - because although undefined is passed in, function declaration trumps variable declaration
+foo( function(){ console.log("bam"); } ); //yay - function declaration trumps function expression (remember the criteria for function declaration)
+
+</script>
+</body>
+</html>

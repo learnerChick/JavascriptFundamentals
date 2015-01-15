@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Quiz</title>
+</head>
+<body>
+  <script>
+    var a = 1;
+    function b() {
+      a = 10;
+      console.log("Function b", a); //10
+      return;
+      function a() {}
+
+    }
+    b();
+    console.log(a); //1
+
+    /*
+    The above will be rewritten as.  Because in function b(), there is already a function a(), the variable a
+    in function b() will be local, not global.  The local a will trump the function declaration.
+    So,the global a is untouched.
+
+    function b(){
+      function a(){}
+      a = 10;
+      console.log("Function b", a);
+      return;
+    }
+    var a;
+    a = 1
+
+    b();
+    console.log(a)
+    */
+  </script>
+</body>
+</html>

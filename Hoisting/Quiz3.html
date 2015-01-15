@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Quiz</title>
+</head>
+<body>
+  <script>
+    var a = 1,
+      b = function a(x) {
+        x && a(--x);
+      };
+    console.log(a); //1
+
+/*
+  In the code above, although variable b is being assigned to function a, that function name isn't hoisted.
+  The code above will be rewritten to
+
+
+var a;
+var b;
+a = 1;
+b = function a(x){
+  x && a(--x);
+}
+
+console.log(a);
+*/
+  </script>
+</body>
+</html>

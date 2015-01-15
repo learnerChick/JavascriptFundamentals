@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Quiz</title>
+</head>
+<body>
+  <script>
+    function foo(){
+      var bar = function() {
+          return 3;
+      };
+      return bar();
+      var bar = function() {
+          return 8;
+      };
+    }
+    console.log(foo()); //3
+
+    /*
+    Will be rewritten to
+
+    function foo(){
+      var bar;
+      bar = function(){
+        return 3;
+      }
+
+      return bar();
+
+      bar = function(){
+        return 8;
+      }
+    }
+    console.log(foo());
+    */
+  </script>
+</body>
+</html>
