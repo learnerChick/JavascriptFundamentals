@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Quiz</title>
+</head>
+<body>
+  <script>
+    foo();
+    var foo = 2;
+
+    function foo(){
+      console.log("bar");
+    }
+
+    function foo(){
+      console.log("foo");
+    }
+
+    /*
+    gets compiled to
+
+    function foo(){
+      console.log("bar");
+    }
+
+    function foo(){
+      console.log("foo");
+    }
+    var foo;
+    foo(); //foo
+
+    foo = 2;
+    */
+  </script>
+</body>
+</html>
