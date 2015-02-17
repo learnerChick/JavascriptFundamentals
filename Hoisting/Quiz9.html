@@ -10,11 +10,40 @@
      if (!foo) {
        var foo = 10;
      }
-     console.log(foo); //10
+     console.log(foo);
    }
    bar();
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    /*
+   Answer is 10.
+
    The code will be rewritten to below.  When foo gets redeclared in function bar(), it will be a local copy.
    When we check if !foo, since foo is undefined, it will fall into the if clause and be set to 10.
     function bar(){
