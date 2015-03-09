@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Planter</title>
+</head>
+<body>
+<script>
+
+// Given the following array of flower plots, determine where a new flower can be planted.
+// Every 1 represents a flower, every 0 represents a plot, flowers can ONLY be planted when there
+// isn't one in the adjacent plot. In the following example indexes 2 and 6 can be planted.
+//
+
+var flowers = [1, 0, 0, 0, 1, 0, 0, 0],
+    flowerBed,
+    flowerPlanter;
+
+
+flowerPlanter = function(arr) {
+    this.flowers = arr;
+}
+
+flowerPlanter.prototype.plant = function(){
+    for(var i = 0; i < this.flowers.length; i++){
+        var before = this.flowers[i-1];
+        var after = this.flowers[i+1];
+        var current = this.flowers[i]
+
+        if((before === 0 && after === 0) && current !== 1){
+            this.flowers[i] = 1;
+        }
+    }
+
+    return this.flowers;
+}
+
+
+
+
+flowerBed = new flowerPlanter(flowers);
+console.log(flowerBed.plant());
+
+
+</script>
+</body>
+</html>
+
+

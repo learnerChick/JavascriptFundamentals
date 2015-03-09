@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Quiz</title>
+</head>
+<body>
+<script>
+    var quiz1 = function() {
+	var result;
+	var people = [
+        { name: 'A', age: 10 },
+        { name: 'B', age: 5 },
+        { name: 'C', age: 20 },
+
+    ];
+
+    var html = document.createElement('ul');
+    html.innerHTML = '<li class="person">A</li>\
+    				  <li class="person">B</li>\
+    				  <li class="person">C</li>';
+
+	var persons = html.querySelectorAll('.person');
+
+    for (var x = 0; x < persons.length; x++) {
+        persons[x].addEventListener('click', function() {
+            result = people[x].name + ' is ' + people[x].age;
+		});
+    }
+
+    //This will fire the click event on 'B'.
+    var event = document.createEvent('CustomEvent');
+    event.initCustomEvent('click', true, true);
+    persons[1].dispatchEvent(event);
+
+    return result;
+};
+
+//quiz1();
+
+
+
+
+
+
+
+
+
+
+-------
+
+
+
+
+
+//fix
+    var quiz2 = function() {
+	var result;
+	var people = [
+        { name: 'A', age: 10 },
+        { name: 'B', age: 5 },
+        { name: 'C', age: 20 },
+
+    ];
+
+    function makeClick(i){
+        return function(){
+             result = people[i].name + ' is ' + people[i].age;
+        }
+    }
+
+    var html = document.createElement('ul');
+    html.innerHTML = '<li class="person">A</li>\
+    				  <li class="person">B</li>\
+    				  <li class="person">C</li>';
+
+	var persons = html.querySelectorAll('.person');
+
+    for (var i = 0; i < persons.length; i++) {
+        persons[i].addEventListener('click', makeClick(i));
+    }
+
+    //This will fire the click event on 'B'.
+    var event = document.createEvent('CustomEvent');
+    event.initCustomEvent('click', true, true);
+    persons[1].dispatchEvent(event);
+
+    console.log(result);
+    return result;
+};
+
+quiz2();
+
+</script>
+</body>
+</html>

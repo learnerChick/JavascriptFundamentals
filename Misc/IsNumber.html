@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Is Number</title>
+</head>
+<body>
+<script>
+
+function isNumberLong(str){
+    var isNum = true,
+        totalDecimal = 0;
+
+    for(var i = 0; i < str.length; i++){
+        var ch = str[i];
+        if(ch === "."){
+            totalDecimal++;
+        }
+
+        if(ch == 1 ||
+            ch == 2 ||
+            ch == 3 ||
+            ch == 4 ||
+            ch == 5 ||
+            ch == 6 ||
+            ch == 7 ||
+            ch == 8 ||
+            ch == 9 ||
+            ch == 0 ||
+            ch == '.'){
+                continue;
+            }
+        else{
+            console.log(false);
+            return false;
+        }
+    }
+    if(totalDecimal <= 1){
+        console.log(true);
+        return true;
+    }
+
+    console.log(false);
+    return false;
+}
+
+isNumberLong("123");
+isNumberLong(123);
+isNumberLong("a13");
+isNumberLong("ab");
+isNumberLong("12.5");
+isNumberLong(35.222);
+isNumberLong("35.222.9");
+
+
+//solution doesn't work for decimals
+function isNumberShort(str){
+    console.log((str ^ 0) == str);
+    return ((str ^ 0) == str);
+}
+
+isNumberShort("123");
+isNumberShort(123);
+isNumberShort("a13");
+isNumberShort("ab");
+isNumberShort("12.5");
+isNumberShort(35.222);
+isNumberShort("35.222.9");
+
+
+</script>
+</body>
+</html>
+
+

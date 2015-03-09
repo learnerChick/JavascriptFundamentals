@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Quiz</title>
+</head>
+<body>
+<script>
+function f(){
+		var a = [];
+		var i;
+			for(i=0; i<3; i++){
+				a[i] = function(){
+					return i;
+				}
+			}
+			return a;
+}
+
+var res = f();
+
+console.log(res[0](), res[1](), res[2]());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------
+//each value of a needs to be a function, so assign it to a function
+
+function fixed(){
+    var a = [];
+    var i;
+			for(i=0; i<3; i++){
+				maker(a, i);
+			}
+
+			return a;
+
+}
+
+function maker(a, i){
+    a[i] = function(){
+        return i;
+    }
+}
+
+var res = fixed();
+console.log(res[0](), res[1](), res[2]());
+</script>
+</body>
+</html>
